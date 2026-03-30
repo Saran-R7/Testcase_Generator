@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background: #f5f7fb;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
+chart {
+    max-width: 50px;
+    max-height: 50x;
+    margin: 5px auto;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    background: #1e73d8;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #155ab6;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    background: white;
+}
+
+.dark table {
+    background: #2a2a2a;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.pass { color: green; font-weight: bold; }
+.fail { color: red; font-weight: bold; }
+.chart-container {
+    width: 280px;
+    height: 200px;
+    margin: 20px auto;
+}

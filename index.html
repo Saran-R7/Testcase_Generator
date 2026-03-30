@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Case Generator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>Test Case Generator</h1>
+
+<div class="container">
+    <form id="testForm">
+        <input type="text" id="feature" placeholder="Enter Feature (Login / Signup / Search / Email)" required>
+        <button type="submit">Generate</button>
+    </form>
+</div>
+
+<!-- CONTROLS -->
+<div>
+    <button onclick="filterTests('All')">All</button>
+    <button onclick="filterTests('Pass')">Pass</button>
+    <button onclick="filterTests('Fail')">Fail</button>
+</div>
+
+<div id="stats">
+    Total: <span id="total"></span> |
+    Pass: <span id="passCount"></span> |
+    Fail: <span id="failCount"></span>
+</div>
+
+<button onclick="clearAll()" style="background:red;">Clear All</button>
+<button onclick="exportCSV()" style="background:green;">Export CSV</button>
+<button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+<h2>Generated Test Cases</h2>
+
+<input type="text" id="searchBox" placeholder="Search test cases..." onkeyup="searchTests()">
+
+<!-- CHART -->
+<div class="chart-container">
+    <canvas id="chart"></canvas>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Feature</th>
+            <th>Scenario</th>
+            <th>Input</th>
+            <th>Expected</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="testTable"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
