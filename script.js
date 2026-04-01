@@ -79,17 +79,7 @@ function generateTestCases(feature) {
             {scenario:"Whitespace Input",input:"   ",expected:"Validation message",status:"Fail"}
         ];
     }
-     else if (feature.includes("email")) {
-        return [
-            {scenario:"Valid Email", input:"user@gmail.com", expected:"Accepted", status:"Pass"},
-            {scenario:"Missing @ Symbol", input:"usergmail.com", expected:"Invalid email", status:"Fail"},
-            {scenario:"Missing Domain", input:"user@", expected:"Invalid email", status:"Fail"},
-            {scenario:"Special Characters", input:"user@#$.com", expected:"Invalid email", status:"Fail"},
-            {scenario:"Uppercase Email", input:"USER@MAIL.COM", expected:"Accepted", status:"Pass"},
-            {scenario:"Long Email", input:"verylongemailaddress@gmail.com", expected:"Accepted", status:"Pass"},
-            {scenario:"Empty Email", input:"''", expected:"Validation error", status:"Fail"}
-        ];
-    }
+    
 
     // 🔄 DEFAULT FEATURE
     return [
