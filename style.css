@@ -1,59 +1,126 @@
 body {
-    font-family: Arial;
-    background: #f5f7fb;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+h1 {
     text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* CARD CONTAINER */
+form, #stats, .chart-container, table {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* INPUTS */
+input, select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.dark {
-    background: #1e1e1e;
-    color: white;
-}
-
-input {
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-}
-chart {
-    max-width: 50px;
-    max-height: 50x;
-    margin: 5px auto;
-}
-
-button {
-    padding: 8px 12px;
-    margin: 5px;
-    cursor: pointer;
-    background: #1e73d8;
-    color: white;
-    border: none;
-}
-
 button:hover {
-    background: #155ab6;
+    background: #0056b3;
 }
 
+/* SPECIAL BUTTON COLORS */
+button[style*="red"] { background: #dc3545; }
+button[style*="green"] { background: #28a745; }
+button[style*="purple"] { background: #6f42c1; }
+
+/* SEARCH BAR */
+#searchBox {
+    width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* TABLE */
 table {
-    margin: 20px auto;
     border-collapse: collapse;
-    width: 90%;
-    background: white;
 }
 
-.dark table {
-    background: #2a2a2a;
+th {
+    background: #007bff;
+    color: white;
 }
 
 th, td {
+    padding: 12px;
     border: 1px solid #ddd;
-    padding: 10px;
 }
 
-.pass { color: green; font-weight: bold; }
-.fail { color: red; font-weight: bold; }
+/* STATUS COLORS */
+.pass { color: #28a745; font-weight: bold; }
+.fail { color: #dc3545; font-weight: bold; }
+
+
+/* CHART */
 .chart-container {
-    width: 280px;
+    width: 300px;
     height: 200px;
-    margin: 20px auto;
 }
+
+/* DARK MODE */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark form, .dark table, .dark #stats, .dark .chart-container {
+    background: #1e1e1e;
+}
+
+.dark th {
+    background: #333;
+}
+
+.filter-buttons {
+    margin-bottom: 10px;
+}
+
+.filter-buttons button {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+    background: #0056b3;
+}
+
