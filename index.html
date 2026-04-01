@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Test Case Generator</title>
+    <title>Test Case Generator | QA Tool</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Chart.js CDN -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
+
 <body>
 
 <h1>Test Case Generator</h1>
+<p>Smart QA tool to generate and manage test cases</p>
 
-<div class="container">
-    <form id="testForm">
-        <input type="text" id="feature" placeholder="Enter Feature (Login / Signup / Search / Email)" required>
-        <button type="submit">Generate</button>
-    </form>
-</div>
+<form id="testForm">
+    <input type="text" id="feature" placeholder="Enter Feature (Login / Signup / Search / Email)" required>
 
-<!-- CONTROLS -->
-<div>
-    <button onclick="filterTests('All')">All</button>
-    <button onclick="filterTests('Pass')">Pass</button>
-    <button onclick="filterTests('Fail')">Fail</button>
-</div>
+  
+
+    <button type="submit">Generate</button>
+</form>
+
+<br>
+
+
+
+<br>
 
 <div id="stats">
     Total: <span id="total"></span> |
@@ -34,31 +36,47 @@
 
 <button onclick="clearAll()" style="background:red;">Clear All</button>
 <button onclick="exportCSV()" style="background:green;">Export CSV</button>
+<button onclick="exportPDF()" style="background:purple;">Export PDF</button>
 <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
 <h2>Generated Test Cases</h2>
 
-<input type="text" id="searchBox" placeholder="Search test cases..." onkeyup="searchTests()">
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchTests()">
 
-<!-- CHART -->
-<div class="chart-container">
-    <canvas id="chart"></canvas>
+<div class="chart-section">
+
+    <!-- 🔵 FILTER BUTTONS -->
+    <div class="filter-buttons">
+        <button onclick="filterTests('All')">All</button>
+        <button onclick="filterTests('Pass')">Pass</button>
+        <button onclick="filterTests('Fail')">Fail</button>
+    </div>
+
+    <!-- 📊 CHART -->
+    <div class="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
+
 </div>
+
 <table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Feature</th>
-            <th>Scenario</th>
-            <th>Input</th>
-            <th>Expected</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody id="testTable"></tbody>
+<thead>
+<tr>
+<th>ID</th>
+<th>Feature</th>
+<th>Scenario</th>
+<th>Input</th>
+<th>Expected</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="testTable"></tbody>
 </table>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
